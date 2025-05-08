@@ -13,22 +13,21 @@ spring:
     out-of-order: false
 
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: false
-    properties:
-      hibernate:
-        format_sql: true
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        format_sql: true
+#    database: postgresql
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 
   mail:
     host: smtp.gmail.com
     port: 465
-    username: nzaberamikepeter@gmail.com
-    password: qekanznywuqxmcls
+    username: luckybelieve10@gmail.com
+    password: clpi qbnu qnsc wvmz
     properties:
       mail:
         smtp:

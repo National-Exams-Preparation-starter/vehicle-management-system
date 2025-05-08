@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Getter
@@ -36,7 +37,16 @@ public class User extends Person {
     private boolean isVerified = false;
 
     @JsonIgnore
+    private String passwordResetCode;
+
+    @JsonIgnore
+    private LocalDateTime passwordResetCodeGeneratedAt;
+
+    @JsonIgnore
     private String verificationCode;
+
+    @JsonIgnore
+    private LocalDateTime verificationCodeCreatedAt;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles",
