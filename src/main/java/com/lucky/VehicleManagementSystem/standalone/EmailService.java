@@ -25,8 +25,6 @@ public class EmailService {
     private final JavaMailSender mailSender;
     private final SpringTemplateEngine templateEngine;
 
-
-
     @Async
     public void sendEmail(String to, String username, String subject, IEmailTemplate emailTemplate, Map<String, Object> variables) throws MessagingException {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
@@ -41,7 +39,7 @@ public class EmailService {
         }
 
         variables.put("username", username);
-        variables.put("supportEmail", "contact@nzabera.com");
+        variables.put("supportEmail", "lucky@gmail.com");
         variables.put("currentYear", LocalDate.now().getYear());
 
         Context context = new Context();

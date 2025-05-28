@@ -6,7 +6,9 @@ import com.lucky.VehicleManagementSystem.models.User;
 import com.lucky.VehicleManagementSystem.payload.ApiResponse;
 import com.lucky.VehicleManagementSystem.services.IUserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -21,13 +23,13 @@ import java.util.UUID;
 @Tag(name = "User management", description = "System user management")
 public class UserController {
 
-    private IUserService userService;
+    private final IUserService userService;
 
     @GetMapping("/me")
-    public ResponseEntity<ApiResponse<UserResponseDTO>> getCurrentUser(){
+    public ResponseEntity<ApiResponse<User>> getCurrentUser(){
         User response  = userService.getLoggedInUser();
-        UserResponseDTO loggedInUser = new UserResponseDTO(response);
-        return ApiResponse.success(null, HttpStatus.OK,loggedInUser);
+
+        return ApiResponse.success(null, HttpStatus.OK,response);
     }
 
     @GetMapping

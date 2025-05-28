@@ -57,6 +57,7 @@ public class UserServiceImpl implements IUserService {
         }
         User user = userRepository.findUserByEmail(username).orElseThrow(() -> new NotFoundException("User Not Found"));
         user.setFullName(user.getFirstName() + " " + user.getLastName());
+
         return user;
     }
 

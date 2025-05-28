@@ -22,6 +22,7 @@ import java.util.Set;
 @EnableSpringDataWebSupport(pageSerializationMode = EnableSpringDataWebSupport.PageSerializationMode.VIA_DTO)
 public class VehicleManagementSystemApplication {
 
+
 	private final IRoleService roleService;
 
 	public static void main(String[] args) {

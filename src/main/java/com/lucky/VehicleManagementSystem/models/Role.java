@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -15,7 +16,12 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "roles")
-public class Role extends Base {
+public class Role {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private UUID id;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role_name")

@@ -77,7 +77,7 @@ public class JWTUtils {
     public String generateToken(Authentication authentication){
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
         Date now = new Date();
-        Date expirationDate = new Date(now.getTime()+jwtAccessTokenExpiration);
+        Date expirationDate = new Date(now.getTime()+Long.parseLong(jwtAccessTokenExpiration));
 
         List<String> roles = userPrincipal.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
